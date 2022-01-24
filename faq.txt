@@ -109,12 +109,12 @@ Open the Terminal and run the following command: sudo spctl --master-disable.
 Q: Why doesn't this server support Clover?
 
 A:
-This is a summary of the "Why OpenCore" page in the Dortania guide (https://dortania.github.io/OpenCore-Install-Guide/why-oc.html).
+This is a summary of the "Why OpenCore?" page in the Dortania guide (https://dortania.github.io/OpenCore-Install-Guide/why-oc.html).
  - OpenCore supports all x86(-64) versions of macOS (AMD users are limited to High Sierra and up with the AMD OS X patches, however).
  - Much less patching is done and OpenCore uses a better method of kext injection which results in better stability.
  - No need to disable SIP, and OpenCore has full support for Secure Boot, both UEFI and Apple's variant.
  - Many users in the server do not know how to troubleshoot issues with Clover as it hasn't been widely used for over 2 years.
- - If you want support with Clover, then head to this forum for help: https://www.macos86.it/ - a lot of people, however, may still recommend OpenCore.
+ - If you want support with Clover, then head to this forum for help: https://www.macos86.it/forum/28-english-section/ - a lot of people, however, may still recommend OpenCore. There is an AMD Clover discussion thread as well (https://www.macos86.it/topic/4913-amd-clover-vanilla-patches).
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
 Q: Why doesn't this server support premade EFIs?
 
@@ -165,7 +165,7 @@ NVIDIA Troubleshooting:
  - Reboot
 
 If this fails:
- - Change your SMBIOS to iMac14,2
+ - Change your SMBIOS to iMac14,2, if already on iMac14,2, try iMacPro1,1
  - Install the latest security update
  - Repeat the same process
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
@@ -275,7 +275,7 @@ Q: When I boot OpenCore, only my previous OS shows up. What should I do?
 A:
  - Check that you have both BaseSystem.dmg and BaseSystem.chunklist in a folder called com.apple.recovery.boot in the root of your flash drive. If using an offline installer made from macOS, this can be ignored.
  - Check that Misc -> Security -> ScanPolicy is set to 0.
- - Check that you have the appropriate HFS+ driver installed for your computer. (i.e. HfsPlus.efi for most systems or HfsPlusLegacy.efi for legacy systems)
+ - Check that you have the appropriate HFS+ driver installed for your computer. (i.e. HfsPlus.efi for most systems or HfsPlusLegacy.efi for legacy systems or systems without RDRAND)
  - Download the latest version of ProperTree and perform an OC Snapshot. This can sometimes fix issues with an outdated UEFI -> Drivers section.
  - Press space while in the OpenCore picker. If this fixes your issue, you should disable Misc -> Boot -> HideAuxiliary as a more permanent solution.
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
@@ -310,13 +310,13 @@ Q: How can I fix DRM? / Why don't Netflix, Apple TV+, etc. work?
 
 A:
 See this page in the Dortania guide for more info on fixing DRM: https://dortania.github.io/OpenCore-Post-Install/universal/drm.html#testing-hardware-acceleration-and-decoding
-If none of these solutions work for you, try adding unfairgva as a device property instead of a boot argument. If that also doesn't work, try removing WhateverGreen.
+If none of these solutions work for you, try adding unfairgva as a device property with the value <01>. If that also doesn't work, try removing WhateverGreen.
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: How can I fix Cubase crashing?
 
 A:
 Apply this patch: https://github.com/somestupidgirl/baios_patch
-Credit for this goes to @sunneva
+Credit for this goes to @sunneva.
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
 Q: I'm confused on how to edit my kernel patches. How should I do this?
 
@@ -333,4 +333,20 @@ A:
 Any Windows hypervisor: Ask in vm_kvm_support
 QEMU under Linux: The best EFI to use (in the case of VMs, EFI sharing is fine) is this one from @Pavo: https://github.com/Pavo-IM/Hackinabox
 Although it is an Unraid guide, it can be used on any Linux distro using virt-manager and QEMU.
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+Q: Discord crashes when I enter a voice call or share my screen. Is there a fix?
+
+A:
+Run $hacks discord in bot_commands.
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+Q: macOS doesn't show up in the OpenCore picker, but I'm sure I've done everything correctly. What should I do?
+
+A:
+ - Press space in the picker, or as a more permanent solution, disable Misc -> Boot -> HideAuxiliary. This should be the first thing you try.
+ - Make sure Misc -> Security -> ScanPolicy is set to 0.
+ - Make sure you have an HFS+ driver. This can either be HfsPlus.efi or OpenHfsPlus.efi, but HfsPlus.efi is recommended.
+ - Make sure you have your DMG and chunklist file in a folder called com.apple.recovery.boot on the root of your flash drive. Users who made an installer on macOS can ignore this.
+ - Check that UEFI -> ConnectDrivers is enabled.
+Note for users of macOS 10.xx:
+ - UEFI -> APFS -> MinDate and MinVersion must be set to either -1 or the correct date for the version of macOS you're attempting to install.
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
