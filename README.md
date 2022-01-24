@@ -1,3 +1,5 @@
 # AMD OS X FAQ
+FAQ for the AMD OS X Discord server.
 
-If you'd like to contribute to the AMD OS X Discord server's FAQ, create a pull request with your changes.
+## Contributing
+Pull requests are actively monitored if you'd like to make a change.
