@@ -267,6 +267,7 @@ A:
  - Make sure Kernel -> Quirks -> ProvideCurrentCpuInfo is enabled.
  - Download the latest version of ProperTree and perform and OC Snapshot. This can sometimes fix issues with an outdated UEFI -> Drivers section.
  - Remove AppleMCEReporterDisabler.kext if you have it.
+ * Hold off on trying this (^^) if booting macOS 12.3+.
  - Remove all drivers except HfsPlus and OpenRuntime. OpenCanopy or any others you know for sure are appropriate for your system may also be kept.
  - Update your BIOS. If on a 400 or 500 series chipset, disable Booter -> Quirks -> SetupVirtualMap after doing so.
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
