@@ -1,7 +1,7 @@
 Q: I'm new here. Where should I start?
 
 A:
-The Dortania guide (https://dortania.github.io/Getting-Started) is the best resource on hackintoshing. Everything you need to get started is there. The vast majority of video guides or other text-based guides are either outdated, not updated frequently, or their information is just plain wrong.
+The Dortania guide (https://dortania.github.io/getting-started/) is the best resource on hackintoshing. Everything you need to get started is there. The vast majority of video guides or other text-based guides are either outdated, not updated frequently, or their information is just plain wrong.
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: Can I install macOS with my NVIDIA graphics card?
 
