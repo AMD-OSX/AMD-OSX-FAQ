@@ -320,6 +320,14 @@ A:
 Apply this patch: https://github.com/somestupidgirl/baios_patch
 Credit for this goes to @sunneva.
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+Q: How can I fix different useful and professional apps crashing?
+
+A:
+Certain apps use Intel MKL libraries (Intel OneAPI). In. short, is possible to redirect some call to this API to AMD compatible ones.
+Apps like: Adobe CC suite, Autodesk Maya, Autodesk Autocad, Matlab, Discord, Waves plugin set, Krisp AI, Neo Luminar and many others.
+Check this thread to see update on patched apps: https://www.macos86.it/topic/5479-amd-new-applications-life/ 
+Credit for this goes to @tomnic
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
 Q: I'm confused on how to edit my kernel patches. How should I do this?
 
 A:
@@ -336,12 +344,14 @@ Any Windows hypervisor: Ask in vm_kvm_support
 QEMU on a Linux host (highly recommended): The best EFI to use (in the case of VMs, EFI sharing is fine) is this one from @Pavo: https://github.com/Pavo-IM/Hackinabox
 Although it is an Unraid guide, it can be used on any Linux distro using virt-manager and QEMU.
 If you just need a working EFI folder, this one is also fine: https://github.com/Pavo-IM/KVM-OpenCore
+You can also use ProXmox as Linux free distro, additional informations and guide here:
+https://www.macos86.it/topic/2509-guide-trx40-osx-bare-metal-proxmox-setup62-1-updated-25-07-2020
 If you are making your own QEMU configuration, make sure to use -cpu host,vendor=GenuineIntel instead of -cpu Penryn,… as a QEMU argument.
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: Discord crashes when I enter a voice call or share my screen. Is there a fix?
 
 A:
-Run $hacks discord in bot_commands.
+Run $hacks discord in bot_commands.You may need to disable SIP.
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: macOS doesn't show up in the OpenCore picker, but I'm sure I've done everything correctly. What should I do?
 
