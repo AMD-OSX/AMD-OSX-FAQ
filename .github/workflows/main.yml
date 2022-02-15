@@ -40,4 +40,4 @@ jobs:
         uses: articulate/actions-markdownlint@v1.1.0
         with:
           # Markdown files to scan
-          files: "**/*.{md,markdown,txt}" # optional, default is **/*.{md,markdown}
+          files: "**/*.{md,markdown}" # optional, default is **/*.{md,markdown}
