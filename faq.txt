@@ -141,14 +141,11 @@ Q: Why do my apps keep crashing (1)?
 
 A:
 If it crashes with Illegal Instruction: 4, then it's because they are 32-bit apps, which do not work with the AMD OS X patches.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-Q: Why do my apps keep crashing (2)?
 
-A:
 Certain apps that use Intel MKL libraries (Intel OneAPI) may crash on AMD, but it is possible to redirect calls to this API to AMD-compatible ones.
 Apps like Adobe CC suite, Autodesk Maya, Autodesk Autocad, Matlab, Discord, Waves plugin set, Krisp AI, Neo Luminar and many others may be affected.
 Check this thread to see update on patched apps: https://www.macos86.it/topic/5479-amd-new-applications-life/ 
-Or check this thread to learn "How to...":
+Or check this thread for a tutorial on how to patch these apps yourself:
 https://www.macos86.it/topic/5489-tutorial-for-patching-binaries-for-amd-hackintosh-compatibility/
 Credit for this goes to @tomnic.
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
