@@ -1,8 +1,8 @@
 Q: I'm new here. Where should I start?
 
 A:
-The Dortania guide (https://dortania.github.io/getting-started/) is the best resource on hackintoshing. Everything you need to get started is there. The vast majority of video guides or other text-based guides are either outdated, not updated frequently, or their information is just plain wrong.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+The Dortania guide (https://dortania.github.io/getting-started) is the best resource on hackintoshing. Everything you need to get started is there. The vast majority of video guides or other text-based guides are either outdated, not updated frequently, or their information is just plain wrong.
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
 Q: Can I install macOS with my NVIDIA graphics card?
 
 A: 
@@ -119,7 +119,7 @@ This is a summary of the "Why OpenCore?" page in the Dortania guide (https://dor
 Q: Why doesn't this server support premade EFIs?
 
 A:
-In short, no two systems are truly alike. What works for someone else may not work for you. In addition, a lot of people making EFIs online don't know what they're doing. Finally, although this may not be important to some people, it doesn't teach you anything. It may work in the short term, but if you ever need help with your installation, you will not know basic things about how to do things like edit your config, add kexts, etc. Finally, someone else's EFI may have their serial numbers still in it, and logging in with that EFI could ban one or both of your Apple IDs.
+In short, no two systems are truly alike. What works for someone else may not work for you. In addition, a lot of people making EFIs online don't know what they're doing. Although this may not be important to some people, it doesn't teach you anything. It may work in the short term, but if you ever need help with your installation, you will not know basic things about how to do things like edit your config, add kexts, etc. Finally, someone else's EFI may have their serial numbers still in it, and logging in with that EFI could ban one or both of your Apple IDs.
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
 Q: Why doesn't this server support distros?
 
@@ -129,7 +129,7 @@ Many of the same reasons we don't support premade EFIs. In addition, though, in 
 Q: Will my AMD iGPU work?
 
 A:
-No. The native Vega drivers currently don't know how to address system memory as video memory, as is done with these iGPUs on Windows and Linux (among other issues). This can't be worked around easily as it's different from how it's done on Intel iGPUs. There are some who are working on these issues, but you shouldn't count on anything coming from it.
+No. The native Vega drivers currently don't know how to address system memory as video memory, as is done with these iGPUs on Windows and Linux (among many other issues). This can't be worked around easily as it's different from how it's done on Intel iGPUs. There are some who are working on these issues, but you shouldn't count on anything coming from it.
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
 Q: How do I fix This version of Mac OS X is not supported on this platform?
 
@@ -137,7 +137,7 @@ A:
 Your SMBIOS information is incorrect. For AMD, MacPro7,1 is best for Catalina and up. If you want to run High Sierra or Mojave, iMacPro1,1 is the best choice.
 Do not use the -no_compat_check boot argument.
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
-Q: Why do my apps keep crashing (1)?
+Q: Why do my apps keep crashing?
 
 A:
 If it crashes with Illegal Instruction: 4, then it's because they are 32-bit apps, which do not work with the AMD OS X patches.
@@ -148,7 +148,7 @@ Check this thread to see update on patched apps: https://www.macos86.it/topic/54
 Or check this thread for a tutorial on how to patch these apps yourself:
 https://www.macos86.it/topic/5489-tutorial-for-patching-binaries-for-amd-hackintosh-compatibility/
 Credit for this goes to @tomnic.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
 Q: How do I fix my USB ports not working?
 
 A:
@@ -198,7 +198,7 @@ You should check the Dortania guide for the most up-to-date information, however
  - MacPro7,1 should be used if running Catalina or newer
  - iMacPro1,1 should be used if running High Sierra or Mojave with a natively supported GPU or if you want to dual boot either of these OSes and a newer OS
  - iMacPro1,1 should be used if using High Sierra with a Maxwell or Pascal NVIDIA GPU, if you experience black screens with this SMBIOS, try iMac14,2
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
 Q: You guys are awesome! Where can I donate?
 
 A:
@@ -255,7 +255,8 @@ Q: When booting, macOS gets stuck or panics on or shortly after AppleACPICPU. Wh
 
 A:
 Disable Above 4G Decoding in your BIOS and add npci=0x3000 to your boot args. If you do not have an option for this in your BIOS, it can be ignored. If this still does not work, remove npci=0x3000 and enable Above 4G Decoding.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+As a last resort you can try updating your BIOS and trying both of the previous suggestions again.
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
 Q: macOS gets stuck on or near IOConsoleUsers. What should I do?
 
 A:
@@ -271,19 +272,10 @@ A:
  - Make sure you have the AMD OS X kernel patches. As of the time of writing, Kernel -> Patch should report 16 children in ProperTree.
  - Make sure you have edited your CPU core count correctly into the kernel patches.
  - Make sure Kernel -> Quirks -> ProvideCurrentCpuInfo is enabled.
- - Download the latest version of ProperTree and perform and OC Snapshot. This can sometimes fix issues with an outdated UEFI -> Drivers section.
+ - Download the latest version of ProperTree and perform an OC Snapshot. This can sometimes fix issues with an outdated UEFI -> Drivers section.
  - Remove AppleMCEReporterDisabler.kext if you are trying to run macOS 12.2 or below. This kext is required for macOS 12.3 and above.
  - Remove all drivers except HfsPlus and OpenRuntime. OpenCanopy or any others you know for sure are appropriate for your system may also be kept.
  - Update your BIOS. If on a 400 or 500 series chipset, disable Booter -> Quirks -> SetupVirtualMap after doing so.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
-Q: When I boot OpenCore, only my previous OS shows up. What should I do?
-
-A:
- - Check that you have both BaseSystem.dmg and BaseSystem.chunklist in a folder called com.apple.recovery.boot in the root of your flash drive. If using an offline installer made from macOS, this can be ignored.
- - Check that Misc -> Security -> ScanPolicy is set to 0.
- - Check that you have the appropriate HFS+ driver installed for your computer. (i.e. HfsPlus.efi for most systems or HfsPlusLegacy.efi for legacy systems or other systems without RDRAND)
- - Download the latest version of ProperTree and perform an OC Snapshot. This can sometimes fix issues with an outdated UEFI -> Drivers section.
- - Press space while in the OpenCore picker. If this fixes your issue, you should disable Misc -> Boot -> HideAuxiliary as a more permanent solution.
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
 Q: How can I transfer my EFI to my macOS drive so I don't have to boot from a USB drive anymore?
 
@@ -320,7 +312,7 @@ A:
 See this page in the Dortania guide for more info on fixing DRM: https://dortania.github.io/OpenCore-Post-Install/universal/drm.html#testing-hardware-acceleration-and-decoding
 If none of these solutions work for you, try adding unfairgva as a device property with the value <01>. If that also doesn't work, try removing WhateverGreen.
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
-Q: How can I fix Cubase crashing?
+Q: How can I fix Cubase 11 crashing?
 
 A:
 Apply this patch: https://github.com/somestupidgirl/baios_patch
@@ -345,19 +337,19 @@ If you just need a working EFI folder, this one is also fine: https://github.com
 You can also use Proxmox as a free alternative to Unraid; for additional information and a guide, see here:
 https://www.macos86.it/topic/2509-guide-trx40-osx-bare-metal-proxmox-setup62-1-updated-25-07-2020
 If you are making your own QEMU configuration, make sure to use -cpu host,vendor=GenuineIntel instead of -cpu Penryn,… as a QEMU argument.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
 Q: Discord crashes when I enter a voice call or share my screen. Is there a fix?
 
 A:
 Run $hacks discord in bot_commands.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
 Q: macOS doesn't show up in the OpenCore picker, but I'm sure I've done everything correctly. What should I do?
 
 A:
  - Press space in the picker, or as a more permanent solution, disable Misc -> Boot -> HideAuxiliary. This should be the first thing you try.
  - Make sure Misc -> Security -> ScanPolicy is set to 0.
  - Make sure you have an HFS+ driver. This can either be HfsPlus.efi or OpenHfsPlus.efi, but HfsPlus.efi is recommended.
- - Make sure you have your DMG and chunklist file in a folder called com.apple.recovery.boot on the root of your flash drive. Users who made an installer on macOS can ignore this.
+ - Make sure you have your BaseSystem DMG and chunklist file in a folder called com.apple.recovery.boot on the root of your flash drive. Users who made an installer on macOS can ignore this.
  - Check that UEFI -> ConnectDrivers is enabled.
 Note for users of macOS 10.xx:
  - UEFI -> APFS -> MinDate and MinVersion must be set to either -1 or the correct date for the version of macOS you're attempting to install.
