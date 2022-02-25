@@ -280,8 +280,8 @@ A:
 Q: How can I transfer my EFI to my macOS drive so I don't have to boot from a USB drive anymore?
 
 A:
-Download CorpNewt's MountEFI tool (https://github.com/corpnewt/mountefi). When prompted, select the 'b' option or the number for your macOS drive. Copy the EFI folder from your USB drive to the EFI volume that appears in Finder.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+Download CorpNewt's MountEFI tool (https://github.com/corpnewt/mountefi) and open it. When prompted, select the 'b' option or the number for your macOS drive. Copy the EFI folder from your USB drive to the EFI volume that appears in Finder.
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
 Q: iMessage, iCloud, and other iServices do not work. What should I do?
 
 A:
@@ -330,6 +330,7 @@ All other bytes in the Replace value must be untouched.
 Q: Can I install macOS as a VM guest?
 
 A:
+Something to note before starting: Using a VM does not in any way solve issues with having an unsupported GPU.
 Any Windows hypervisor: Ask in vm_kvm_support
 QEMU on a Linux host (highly recommended): The best EFI to use (in the case of VMs, EFI sharing is fine) is this one from @Pavo: https://github.com/Pavo-IM/Hackinabox
 Although it is an Unraid guide, it can be used on any Linux distro using virt-manager and QEMU.
@@ -353,4 +354,10 @@ A:
  - Check that UEFI -> ConnectDrivers is enabled.
 Note for users of macOS 10.xx:
  - UEFI -> APFS -> MinDate and MinVersion must be set to either -1 or the correct date for the version of macOS you're attempting to install.
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+Q: macOS (or the installer) boots up fine, but freezes shortly after booting. What should I do?
+
+A:
+ - Make sure Kernel -> Emulate -> DummyPowerManagement is enabled. This may also fix a panic on the AppleIntelCPUPowerManagement kext, if you experience that
+ - If you have a device ID patch for your I225-V, make sure you have the dk.e1000=0 boot arg. This forces macOS to use the I225LM kext-based driver, and disables the DriverKit E1000 driver, which causes crashes on some systems.
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
