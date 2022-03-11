@@ -148,6 +148,10 @@ Check this thread to see update on patched apps: https://www.macos86.it/topic/54
 Or check this thread for a tutorial on how to patch these apps yourself:
 https://www.macos86.it/topic/5489-tutorial-for-patching-binaries-for-amd-hackintosh-compatibility/
 Credit for this goes to @tomnic.
+
+An app has been developed that allows you to automate the patching procedure of incompatible Intel libraries thanks to @NyaomiDEV
+link: https://www.macos86.it/topic/5602-amd-amdfriend-for-almost-all-of-your-library-patching-needs/
+
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
 Q: How do I fix my USB ports not working?
 
