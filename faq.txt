@@ -460,3 +460,19 @@ $ defaults write com.apple.sidecar.display MaxBitrate -int 250000000
 
 You may find it beneficial to play around with the minimum and maximum bitrate values to find what is most stable for you.
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+Q: How can I fix my microphone?
+
+A: 
+The easiest way is to buy an USB DAC (USB Sound Card) which is supported nativaly with AppleALC. If you want to fix it without spending money, you can fix it by replacing AppleALC with VoodooHDA (Keep in mind that sound quality might become worse?:
+
+  - Open your config.plist, and in NVRAM > Add > 7C... set csr-active-config to 85020000, then add an entry for csr-active-config in NVRAM > Delete > 7C... (Or Reset NVRAM)
+  - Remove AppleALC from the Kexts folder then do an OC Snapshot in ProperTree
+  - Download VoodooHDA Installer (https://github.com/chris1111/VoodooHDA-OC/files/5752212/VoodooHDA.OC.dmg.zip) and install it. When it asks you to drag the volume, drag the partition where macOS is installed (if you don't see it, go to Finder > Preferences and enable Hard Disks)
+  - Once it's done, the EFI partition should automatically be mounted as "ESP". Open your config.plist and remove VoodooHDA from Kexts then do an OC Snapshot.
+  - Download the latest VoodooHDA from SourceForge (https://sourceforge.net/projects/voodoohda/) and unzip it
+  - Open a Terminal and run `sudo cp -R /path_to_kext/VoodooHDA.kext  /Library/Extensions`
+  - If you're on Ventura, you also need to run `sudo kextutil -v /Library/Extensions/VoodooHDA.kext`
+  - Go to System Preferences > Security and Privacy, press the Lock and press Allow to allow the loading of the kext
+  - Reboot your system. If you get a panic on boot, do not panic (no pun intended), it's normal, just force reboot the system)
+  - Once you're in macOS, go to System Preferences > VoodooHDA and enable "Enhance Stereo" if your audio is choppy/delayed/distorted 
+  - Enjoy microphone support!
