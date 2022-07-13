@@ -463,7 +463,7 @@ You may find it beneficial to play around with the minimum and maximum bitrate v
 Q: How can I fix my microphone?
 
 A: 
-The easiest way is to buy an USB DAC (USB Sound Card) which is supported nativaly with AppleALC. If you want to fix it without spending money, you can fix it by replacing AppleALC with VoodooHDA (Keep in mind that sound quality might become worse):
+The easiest way is to buy an USB DAC (USB Sound Card) which is supported nativaly with AppleALC. If you want to fix it without spending money, you can do it by replacing AppleALC with VoodooHDA (Keep in mind that sound quality might become worse):
 
   - Open your config.plist, and in NVRAM > Add > 7C... set csr-active-config to 85020000, then add an entry for csr-active-config in NVRAM > Delete > 7C... (Or Reset NVRAM)
   - Remove AppleALC from the Kexts folder then do an OC Snapshot in ProperTree
