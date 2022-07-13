@@ -460,3 +460,20 @@ $ defaults write com.apple.sidecar.display MaxBitrate -int 250000000
 
 You may find it beneficial to play around with the minimum and maximum bitrate values to find what is most stable for you.
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+Q: How can I fix my microphone?
+
+A: 
+The easiest way is to buy a USB audio interface. These are supported natively with no kexts.
+If you want to fix it without spending money, you can do it by replacing AppleALC with VoodooHDA, however keep in mind that sound quality will be worse:
+ - Set NVRAM -> Add -> 7C4... -> csr-active-config to 85020000
+ - Add an entry for csr-active-config in NVRAM -> Delete -> 7C4... or reset NVRAM in the OpenCore picker
+ - Remove AppleALC from your kexts
+ - Download and run the VoodooHDA installer (https://github.com/chris1111/VoodooHDA-OC/files/5752212/VoodooHDA.OC.dmg.zip); when it asks you to drag the volume, drag the volume where macOS is installed
+ - Remove VoodooHDA from your kexts
+ - Download the latest version of VoodooHDA (https://sourceforge.net/projects/voodoohda/) and decompress it
+ - Run sudo cp -R /path_to_kext/VoodooHDA.kext /Library/Extensions
+ - If you are running macOS Ventura, you also need to run sudo kextutil -v /Library/Extensions/VoodooHDA.kext
+ - Go to System Preferences -> Security and Privacy, click the Lock at the bottom-left corner of the window and then click "Allow" to allow the loading of the kext.
+ - Reboot your system; if you get a kernel panic, force reboot the system again
+ - Enable System Preferences -> VoodooHDA -> Enhance Stereo if your audio is choppy/delayed/distorted
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
