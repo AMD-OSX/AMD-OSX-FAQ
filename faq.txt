@@ -2,16 +2,16 @@ Q: I'm new here. Where should I start?
 
 A:
 The Dortania guide (https://dortania.github.io/getting-started) is the best resource on hackintoshing. Everything you need to get started is there. The vast majority of video guides or other text-based guides are either outdated, not updated frequently, or their information is just plain wrong.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: Can I install macOS with my NVIDIA graphics card?
 
-A: 
+A:
 Maybe, but not the latest version.
  - Ampere and Turing (GTX 16, RTX 20, 30 series) are not supported and never will be.
  - Maxwell and Pascal (GTX 745, 750, 750 Ti, GTX 900, 10 series) are supported in macOS Sierra and High Sierra, but AMD users must use High Sierra.
  - Kepler (Some GTX 600 series, Most GTX 700 series) is supported up to macOS Big Sur.
  - Reference the GPU Buyer's Guide (https://dortania.github.io/GPU-Buyers-Guide/modern-gpus/nvidia-gpu.html) for information on other cards or if you are unsure if you have a supported GTX 600, 700, or 900 series card.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: Can I install macOS with my AMD graphics card?
 
 A:
@@ -24,14 +24,14 @@ If it's recent, probably.
  - Navi 21 (RX 6800 and later) is supported in macOS Big Sur (11.4) and later.
  - Navi 22 (RX 6700 XT) is not supported.
  - Navi 23 (RX 6600 and 6600 XT) is supported in macOS Monterey (12.1) and later.
- - Navi 24 (RX 6500 XT) is not supported. 
+ - Navi 24 (RX 6500 XT) is not supported.
  - Reference the GPU Buyer's Guide (https://dortania.github.io/GPU-Buyers-Guide/modern-gpus/amd-gpu.html) for information on other cards.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: Will macOS work with my AMD laptop?
 
 A:
 No. Their GPUs aren't compatible with macOS. Also, many people who have attempted it have reported ACPI issues, unsupported SATA controllers, etc. And to make matters worse, the lack of power management means your battery life will be terrible.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: Why is my NVIDIA GPU performance worse than Windows and Linux?
 
 A:
@@ -45,14 +45,14 @@ Look under Kernel -> Patch in your config.plist file. Find the two patches calle
 If you are on the TRX40 platform, delete both of these patches.
 Otherwise, set the Enabled value of algrey's patch to false, and set the same key to true on Shaneee's patch.
 Note that Shaneee's patch can affect HDMI/DP audio quality on some cards and does not work on NVIDIA GPUs.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: Is there any way of running VMs on a macOS host?
 
 A:
 Yes, you will either need to use VirtualBox, VMware 10 or older, or Parallels Desktop 13.1.0 or older. You will of course also need virtualization enabled in your BIOS.
 For VMware and Parallels, anything newer than version 10 or 13.1.0 respectively use AppleHV which is not supported on AMD CPUs.
 QEMU also works, but KVM acceleration and PCI passthrough do not, so the other options are a better choice.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: Why doesn't my sound work?
 
 A:
@@ -61,14 +61,14 @@ A:
  - If no layout IDs work for you, try VoodooHDA. It does not work if injected from OpenCore on macOS 11.3 or later.
  - Bulldozer and Jaguar users should use VoodooHDA. This will work out of the box without any configuration but has slightly worse sound quality. It does not work if injected from OpenCore on macOS 11.3 or later.
  - AUX microphones don't work with AppleALC, you will need VoodooHDA or a USB DAC for these to work.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: Why doesn't my PCIe/M.2 Wi-Fi work?
 
 A:
  - Broadcom/Fenvi users should have Wi-Fi working out of the box without any kexts. If this isn't the case, either your card isn't actually supported, or there is a faulty connection somewhere. Check the Wireless Buyer's Guide (https://dortania.github.io/Wireless-Buyers-Guide/) for information on if your card is supported.
  - Intel Wi-Fi users should use itlwm (https://github.com/OpenIntelWireless/itlwm). If you need Wi-Fi in the macOS Installer, use AirportItlwm and set Misc -> Security -> SecureBootModel to Default. If you want to use Continuity features such as Handoff and Universal Clipboard, install AirportItlwm as well. If you value stability and speed, use itlwm. This, however, will require you to run the HeliPort app every time you boot macOS.
  - Users of Atheros or any other vendor not listed here should reference the Wireless Buyer's Guide (https://dortania.github.io/Wireless-Buyers-Guide/) to check for support for their card.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: Why doesn't my USB Wi-Fi work?
 
 A:
@@ -82,25 +82,25 @@ A:
  - If you are installing macOS using the Dortania guide, yes. Check the Fixing iServices guide (https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html) for troubleshooting steps.
  - If you are installing macOS in a VM that does not use OpenCore as its bootloader, no.
  - If you are installing macOS using a custom kernel or using a distro, no.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: Where can I find drivers for my NVIDIA GPU?
 
 A:
 Check if your NVIDIA GPU is supported in the GPU Buyer's Guide (https://dortania.github.io/GPU-Buyers-Guide/modern-gpus/nvidia-gpu.html).
 If it is natively supported, it will work without manually installing drivers.
 If it needs the NVIDIA Web Drivers, update to the latest build of High Sierra through the App Store. If you've done this correctly, when you click on "10.13.6" in About This Mac it will say 17G14042 in parentheses, which is your build number. If not, check the App Store for another update. Once this is completed or you cannot update further, go to bot_commands and run $nvweb [your build number].
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: Why doesn't my AMD GPU work?
 
 A:
 The majority of supported AMD GPUs work out of the box. If your AMD GPU is not working, check the GPU Buyer's Guide (https://dortania.github.io/GPU-Buyers-Guide/modern-gpus/amd-gpu.html) for information on anything special you may need to do to get your card working.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: How can I disable Gatekeeper?
 
 A:
 Open the Terminal and run the following command:
 # spctl --master-disable
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: Why doesn't this server support Clover?
 
 A:
@@ -109,28 +109,28 @@ This is a summary of the "Why OpenCore?" page in the Dortania guide (https://dor
  - Much less patching is done and OpenCore uses a better method of kext injection which results in better stability.
  - No need to disable SIP, and OpenCore has full support for Secure Boot, both UEFI and Apple's variant.
  - Many users in the server do not know how to troubleshoot issues with Clover as it hasn't been widely used for over 2 years.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: Why doesn't this server support premade EFIs?
 
 A:
 In short, no two systems are truly alike. What works for someone else may not work for you. In addition, a lot of people making EFIs online don't know what they're doing. Although this may not be important to some people, it doesn't teach you anything. It may work in the short term, but if you ever need help with your installation, you will not know how to do basic things like edit your config, add kexts, etc. Finally, someone else's EFI may have their serial numbers still in it, and logging in with that EFI could ban one or both of your Apple IDs.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: Why doesn't this server support distros?
 
 A:
 Many of the same reasons we don't support premade EFIs. In addition, though, in order for distros to successfully boot across many different systems, distro makers often put nearly every kext known to man in them, which causes instability and is just bad practice. Distros also almost never have support for iServices of any kind and it can be difficult to get GPU acceleration working on some cards. And most importantly, redistributing macOS is piracy, which is illegal.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: Will my AMD iGPU work?
 
 A:
 No. The native Vega drivers currently don't know how to address system memory as video memory, as is done with these iGPUs on Windows and Linux (among many other issues). This can't be worked around easily as it's different from how it's done on Intel iGPUs. There are some who are working on these issues, but you shouldn't count on anything coming from it.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: How do I fix This version of Mac OS X is not supported on this platform?
 
 A:
 Your SMBIOS information is incorrect. For AMD, MacPro7,1 is best for Catalina and up. If you want to run High Sierra or Mojave, iMacPro1,1 is the best choice.
 Do not use the -no_compat_check boot argument.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: Why do my apps keep crashing?
 
 A:
@@ -138,20 +138,20 @@ If it crashes with Illegal Instruction: 4, then it's because they are 32-bit app
 
 Certain apps that use Intel MKL libraries (Intel OneAPI) may crash on AMD, but it is possible to redirect calls to this API to AMD-compatible ones.
 Apps like Adobe CC suite, Autodesk Maya, Autodesk Autocad, Matlab, Discord, Waves plugin set, Krisp AI, Neo Luminar and many others may be affected.
-Check this thread to see update on patched apps: https://www.macos86.it/topic/5479-amd-new-applications-life/ 
+Check this thread to see update on patched apps: https://www.macos86.it/topic/5479-amd-new-applications-life/
 Or check this thread for a tutorial on how to patch these apps yourself:
 https://www.macos86.it/topic/5489-tutorial-for-patching-binaries-for-amd-hackintosh-compatibility/
 Credit for this goes to @tomnic.
 
 An app has been developed that allows you to automate the patching procedure of incompatible Intel libraries thanks to @NyaomiDev.
 https://www.macos86.it/topic/5602-amd-amdfriend-for-almost-all-of-your-library-patching-needs/
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: How do I fix my USB ports not working?
 
 A:
  - If you're on a Bulldozer or Jaguar CPU, install XLNCUSBFix.kext (https://cdn.discordapp.com/attachments/566705665616117760/566728101292408877/XLNCUSBFix.kext.zip). It is also recommended to make a USB map with USBToolBox.
  - If you're using a Zen CPU, use USBToolBox (https://github.com/usbtoolbox/tool) to make a USB map. Make sure to read the README for that repository before using it. A map made using the Dortania manual mapping guide will work as well.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: Why do the NVIDIA Web Drivers keep deselecting after rebooting?
 
 A:
@@ -171,23 +171,23 @@ If this fails:
  - Change your SMBIOS to iMac14,2, if already on iMac14,2, try iMacPro1,1
  - Install the latest security update
  - Repeat the same process
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: A new version of macOS just released. Can I install it?
 
 A:
 If the update still has the same name (e.g. Big Sur, Monterey, etc) as your current installation then most likely yes. If it is a new OS release, check the beta release discussion channel (ventura_discussion) for any issues with the new OS version.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: Are beta versions of macOS supported on AMD?
 
 A:
 If by "supported" you mean bootable, then most of the time - yes. If by "supported" you mean that support is offered if you have a problem - no. In the case of completely new releases of macOS, new kernel patches must be used. Development of these patches can take time, so check in the server's beta discussion channel (ventura_discussion) to determine if the version you want to update to is bootable.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: How can I fix sleep?
 
 A:
 If on Bulldozer or Jaguar, install XLNCUSBFix.kext (https://cdn.discordapp.com/attachments/566705665616117760/566728101292408877/XLNCUSBFix.kext.zip). Users of all CPUs should follow the same procedure as for How do I fix my USB ports not working?.
 Also make sure that any unsupported GPUs are properly disabled.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: What SMBIOS should I use?
 
 A:
@@ -195,7 +195,7 @@ You should check the Dortania guide for the most up-to-date information, however
  - MacPro7,1 should be used if running Catalina or newer
  - iMacPro1,1 should be used if running High Sierra or Mojave with a natively supported GPU or if you want to dual boot either of these OSes and a newer OS
  - iMacPro1,1 should be used if using High Sierra with a Maxwell or Pascal NVIDIA GPU, if you experience black screens with this SMBIOS, try iMac14,2
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: You guys are awesome! Where can I donate?
 
 A:
@@ -203,7 +203,7 @@ A:
  - You can donate to AMD OS X here: (https://forum.amd-osx.com/app.php/donation/index.html).
 This will go towards improving and (most importantly) hosting the forums and knowledge base. If you would like the AMD OS X Donator role, DM @Shaneee with a screenshot of your PayPal receipt.
  - Although this is not expected at all, if you would like to donate to a specific person helping you, just ask. It would be well appreciated.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: What format and partition scheme should I use?
 
 A:
@@ -221,7 +221,7 @@ Q: How do I fix my CPU showing up as Unknown or as an Intel processor in About T
 A:
 Install the RestrictEvents kext (https://github.com/acidanthera/restrictevents/releases).
 Then set PlatformInfo -> Generic -> ProcessorType to 1537 if you have a 2-, 4-, or 6-core CPU. If you have an 8-core CPU or greater, set it to 3841.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: How can I fix the 🚫 sign followed by Still waiting for root device or my verbose screen looking garbled?
 
 A:
@@ -253,38 +253,38 @@ Q: When booting, macOS gets stuck or panics on or shortly after AppleACPICPU. Wh
 A:
 Disable Above 4G Decoding in your BIOS and add npci=0x3000 to your boot args. If you do not have an option for this in your BIOS, it can be ignored. If this still does not work, remove npci=0x3000 and enable Above 4G Decoding.
 If you do not have OpenCore properly configured for Resizable BAR, disable it.
-Finally, make sure Booter -> Quirks -> SyncRuntimePermissions is enabled. 
+Finally, make sure Booter -> Quirks -> SyncRuntimePermissions is enabled.
 As a last resort you can try updating your BIOS and trying the first two suggestions again.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: macOS gets stuck on or near IOConsoleUsers. What should I do?
 
 A:
 This indicates a GPU issue and can be caused by a number of things.
  - If you are using a device ID patch, double check that you have done it correctly.
  - If you have a GPU disabled, make sure there are no display cables plugged into it.
- - Make sure you have the WhateverGreen kext (https://github.com/acidanthera/whatevergreen/releases) installed. If none of the other solutions work, try removing WhateverGreen. 
+ - Make sure you have the WhateverGreen kext (https://github.com/acidanthera/whatevergreen/releases) installed. If none of the other solutions work, try removing WhateverGreen.
  - If you are using the NVIDIA Web Drivers, try another video port on your GPU.
- - If you are using the NVIDIA Web Drivers, try switching your SMBIOS to iMacPro1,1. 
- - If you are using a Navi GPU, try adding the agdpmod=pikera boot argument. Note that this requires WhateverGreen. 
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+ - If you are using the NVIDIA Web Drivers, try switching your SMBIOS to iMacPro1,1.
+ - If you are using a Navi GPU, try adding the agdpmod=pikera boot argument. Note that this requires WhateverGreen.
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: macOS gets stuck on [EB|#LOG:EXITBS:START], End RandomSeed, End SetConsoleMode, or somewhere where text starting with "EB|" is visible. What should I do?
 
 A:
  - Make sure you have the AMD OS X kernel patches. As of the time of writing, Kernel -> Patch should report 17 children in ProperTree.
  - Make sure you have edited your CPU core count correctly into the kernel patches.
- - Make sure you have the latest version of OpenCore. 
+ - Make sure you have the latest version of OpenCore.
  - Make sure Kernel -> Quirks -> ProvideCurrentCpuInfo is enabled.
  - Download the latest version of ProperTree and perform an OC Snapshot. This can sometimes fix issues with an outdated UEFI -> Drivers section if you recently updated OpenCore.
  - Remove AppleMCEReporterDisabler.kext if you are trying to run macOS 12.2.1 or below. This kext is required for macOS 12.3 and above.
  - Remove any Intel-specific VirtualSMC plugins you may have such as SMCSuperIO, SMCProcessor, or others.
  - Remove all drivers except HfsPlus and OpenRuntime. OpenCanopy or any others you know for sure are appropriate for your system may also be kept.
  - Update your BIOS. If on a 400 or 500 series chipset, disable Booter -> Quirks -> SetupVirtualMap after doing so.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: How can I transfer my EFI to my macOS drive so I don't have to boot from a USB drive anymore?
 
 A:
 Download CorpNewt's MountEFI tool (https://github.com/corpnewt/mountefi) and open it. When prompted, select the 'b' option or the number for your macOS drive. Do not select your USB drive. Copy the EFI folder from your USB drive to the EFI volume that appears in Finder.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: iMessage, iCloud, and other iServices do not work. What should I do?
 
 A:
@@ -296,7 +296,7 @@ Q: How can I stop macOS from giving me a notification for an invalid memory conf
 
 A:
 Install the RestrictEvents kext (https://github.com/acidanthera/restrictevents/releases). This is fine for the vast majority of users, but if you would like a better fix, follow the Dortania manual memory mapping guide (https://dortania.github.io/OpenCore-Post-Install/universal/memory.html#mapping-our-memory).
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: Is my CPU supported?
 
 A:
@@ -307,20 +307,20 @@ The AMD OS X kernel patches only support specific AMD CPUs:
 Any other processor microarchitecture, including K10, is not supported.
 See here for more details on Bulldozer and Jaguar: https://en.wikipedia.org/wiki/List_of_AMD_processors#Bulldozer_architecture;_Bulldozer,_Piledriver,_Steamroller,_Excavator_(2011–2017)
 
-Note: Support for the Ryzen 7000 series has not been confirmed yet. 
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+Note: Support for the Ryzen 7000 series has not been confirmed yet.
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: How can I fix DRM? / Why don't Netflix, Apple TV+, etc. work?
 
 A:
 See this page in the Dortania guide for more info on fixing DRM: https://dortania.github.io/OpenCore-Post-Install/universal/drm.html#testing-hardware-acceleration-and-decoding
 If none of these solutions work for you, try adding unfairgva as a device property with the value <01>. If that also doesn't work, try removing WhateverGreen.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: How can I fix Cubase 11 crashing?
 
 A:
 Apply this patch: https://github.com/somestupidgirl/baios_patch
 Credit for this goes to @sunneva.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: I'm confused on how to edit my kernel patches. How should I do this?
 
 A:
@@ -329,7 +329,7 @@ https://imgur.com/a/iWsxePT
 The things to note here are the Replace values of each of the 3 patches. 0x0C from the image is 12 in hexadecimal.
 Simply replace the second byte (1 byte is 2 characters in hexadecimal, so the second byte is the 3rd and 4th character here) of the Replace value of each of the first three patches with your CPU core count in hexadecimal.
 All other bytes in the Replace values must be untouched.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: Can I install macOS as a VM guest?
 
 A:
@@ -341,24 +341,24 @@ If you just need a working EFI folder, this one is also fine: https://github.com
 You can also use Proxmox as a free alternative to Unraid; for additional information and a guide, see here:
 https://www.macos86.it/topic/2509-guide-trx40-osx-bare-metal-proxmox-setup62-1-updated-25-07-2020
 If you are making your own QEMU configuration, make sure to use -cpu host,vendor=GenuineIntel instead of -cpu Penryn,… as a QEMU argument.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: Discord crashes when I enter a voice call or share my screen. Is there a fix?
 
 A:
 Run $link Discord Fix in bot_commands.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: macOS doesn't show up in the OpenCore picker, but I'm sure I've done everything correctly. What should I do?
 
 A:
  - Press space in the picker, or as a more permanent solution, disable Misc -> Boot -> HideAuxiliary. This should be the first thing you try.
  - Make sure Misc -> Security -> ScanPolicy is set to 0.
  - Make sure you have an HFS+ driver. This can either be HfsPlus.efi or OpenHfsPlus.efi, but HfsPlus.efi is recommended.
- - If on a platform that does not support RDRAND (platforms older than Zen), try HfsPlusLegacy.efi instead of HfsPlus.efi. Make sure you do not have two HFS+ drivers at the same time. 
+ - If on a platform that does not support RDRAND (platforms older than Zen), try HfsPlusLegacy.efi instead of HfsPlus.efi. Make sure you do not have two HFS+ drivers at the same time.
  - Make sure you have your BaseSystem DMG and chunklist file in a folder called com.apple.recovery.boot on the root of your flash drive. Users who made an installer on macOS can ignore this.
  - Check that UEFI -> ConnectDrivers is enabled.
 Note for users of macOS 10.xx:
  - UEFI -> APFS -> MinDate and MinVersion must be set to either -1 or the correct date for the version of macOS you're attempting to install.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: macOS (or the installer) boots up fine, but freezes shortly after booting. What should I do?
 
 A:
@@ -367,7 +367,7 @@ A:
 
 Note for users of macOS 12.3+:
 e1000=0 is required on macOS 12.3+ on systems with I225-V or I211 NICs regardless of whether you use them or not.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: How can I fix Bluetooth?
 
 A:
@@ -382,7 +382,7 @@ In macOS Monterey:
  - Perform a USB map (see How do I fix my USB ports not working? for more details) and set your Bluetooth header's port type to 255.
  - Do not use any wireless card injector kexts on macOS Monterey.
  - Kernel -> Patch -> ExtendBTFeatureFlags should not be used.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: Can I perform an in-place downgrade of macOS?
 
 A:
@@ -394,7 +394,7 @@ This method will not work for downgrading either to or from macOS 10.14 or below
  - After installation has completed, macOS will ask you if you want to import your data from your data volume. Select yes.
  - After verifying that your data is intact, you can delete the volume for your previous version of macOS. This should also be done from macOS recovery.
 Credit to @Litarvan for this method.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: macOS won't boot anymore! How can I access my EFI partition from Windows?
 
 A:
@@ -417,7 +417,7 @@ A:
 Add the AppleMCEReporterDisabler kext. (https://files.amd-osx.com/AppleMCEReporterDisabler.kext.zip)
 If you boot both a version of macOS above 12.3 and a version below 12.3 on the same machine, set the kext's MinKernel value to 21.4.0.
 Credit to @Pavo for the solution and @XLNC for the kext.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: The NVIDIA Web Drivers won't install. What should I do?
 
 A:
@@ -425,26 +425,30 @@ The certificate for the NVIDIA Web Drivers got revoked recently.
 For now, you'll just have to wait.
 
 Update: NVIDIA has confirmed that they know about the issue and are working on a fix.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+https://drive.google.com/uc?export=download&id=1lPuKuQqI7OtNzMMmSrQ8MqVMC1EnlfCv
+In the meantine until there is an official update from NVIDIA, you can use these drivers obtained from an NVIDIA support ticket.
+You will of course need macOS 10.13.6 build 17G14042 for this to work.
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: Can I install macOS Ventura?
 
 A:
 It is possible, but expect to find issues and bugs.
 As always, we offer no support for issues encountered on beta versions of macOS.
-The latest commit of the AMD OS X patches supports macOS Ventura betas 1 and 2.
+The latest commit of the AMD OS X patches supports macOS Ventura betas 1, 2, and 3.
 In addition to this, you will need:
- - OpenCore 0.8.2 or later
- - The latest release of all of your kexts
-Both of these are absolutely required.
+ - OpenCore 0.8.3 or later
+ - The latest release of all of your kexts (SMCAMDProcessor in particular)
+ - The latest commit of Lilu
+All three of these are absolutely required.
 For existing Ventura users who have used the previous guidance:
  - Enable Booter -> Quirks -> AvoidRuntimeDefrag
  - Enable Kernel -> Emulate -> DummyPowermanagement
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: Some apps don't work after disabling AMFI and SIP on macOS Monterey. Is there a way to fix this?
 
 A:
 Add ipc_control_port_options=0 to your boot args.
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ 
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: Does Sidecar work on AMD?
 
 A:
@@ -462,7 +466,7 @@ You may find it beneficial to play around with the minimum and maximum bitrate v
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 Q: How can I fix my microphone?
 
-A: 
+A:
 The easiest way is to buy a USB audio interface. These are supported natively with no kexts.
 If you want to fix it without spending money, you can do it by replacing AppleALC with VoodooHDA, however keep in mind that sound quality will be worse:
  - Set NVRAM -> Add -> 7C4... -> csr-active-config to 85020000
