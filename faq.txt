@@ -481,3 +481,19 @@ If you want to fix it without spending money, you can do it by replacing AppleAL
  - Reboot your system; if you get a kernel panic, force reboot the system again
  - Enable System Preferences -> VoodooHDA -> Enhance Stereo if your audio is choppy/delayed/distorted
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+Q: How can I use pascal/maxwell GPU in Monterey/BigSur?
+
+A:
+first, this patch is not working on Mojave/Catalina. upgrade to BigSur/Monterey.
+- Open your config.plist, add "amfi_get_out_of_my_way=0x1 ngfxcompat=1 ngfxgl=1 nvda_drv_vrl=1" to your bootargs.
+- set csr-active-config to "030A0000".
+- make this in config "NVRAM -> Delete -> 7C436110-AB2A-4BBB-A880-FE41995C9F82 -> csr-active-config"
+- securebootmodel > Disabled
+- Reboot.
+- Download OpenCoreLegacyPatcher(OCLP)from here https://github.com/dortania/OpenCore-Legacy-Patcher/releases
+- click "Post install root patch"
+- start root patch(you need enter your password)
+  Note: if you want to remove patch, click Revert root patch.
+- After Patch finishes, open Security & Privacy in System settings. Allow NVIDIA WebDriver to load and reboot
+　if you can't click allow, click padlock and enter password.
+- enjoy! 
